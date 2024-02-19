@@ -31,7 +31,7 @@ const Dashboard = () => {
                               <Link href="/dashboard/stockInward">Stock Inward</Link>
                               </li>
                               <li className='pl-5 bg-slate-200  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
-                              <Link href="/dashboard/stockInward">Stock Outward</Link>
+                              <Link href="/dashboard/stockOutward">Stock Outward</Link>
                               </li>
                             
                       </ul>

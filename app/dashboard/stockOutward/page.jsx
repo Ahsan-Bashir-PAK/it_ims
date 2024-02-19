@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
-const StockInward = () => {
+const StockOutward = () => {
   const defaults = {
     vno: "",
     date: "",
@@ -21,7 +21,7 @@ const StockInward = () => {
     description: "",
   }
 
-
+  const Branches = ['Admin', 'DLA', 'Development','Security', 'OSI', 'Accounts', 'MT', 'Store', 'Training', 'Mess', 'Drill'];
   const [data, setData] = useState(defaults)
  
   const [ReceivedItemArray, setRecievedItemArray] = useState([]);
@@ -45,11 +45,12 @@ function deleteItem(val){
 
 //  Data add to database
   const saveData = () => {
+      
     if(ReceivedItemArray!=""){
       // console.log(ReceivedItemArray)
     ReceivedItemArray.map((item, key) => {
     
-      axios.post('http://192.168.0.100:8000/api/stockin', item).then(
+      axios.post('http://192.168.0.100:8000/api/stockout', item).then(
         // console.log(item)
         response => {
           if (response) { console.log(response.data.message)
@@ -76,7 +77,7 @@ function deleteItem(val){
           <div className=' justify-start border border-black p-8 w-full rounded-md items-start  bg-gradient-to-b from-blue-300   to-slate-100 shadow-md shadow-blue-800 h-6/6 '>
             <div className='flex flex-row bg-blue-100 justify-center items-center rounded-md'>
               <MdOutlineProductionQuantityLimits size={25} color='#123456' />
-              <h1 className='font-bold text-blue-900  p-2 '> Stock Inward Items</h1>
+              <h1 className='font-bold text-blue-900  p-2 '> Stock Outwards</h1>
             </div>
             <div className=' flex flex-row mt-2'>
               <div className=' w-4/12 '><label htmlFor="serial" className='  '>Voucher No.</label></div>
@@ -146,6 +147,16 @@ function deleteItem(val){
                   <option value="new">New</option>
                   <option value="used">Used</option>
                 </select>
+                
+                <select name="status" >
+                {
+                  Branches.forEach(function(entry) {
+                    <option value={console.log(entry)}>{console.log(entry)}</option>
+                  })
+                }
+                </select>
+                
+                
               </div>
             </div>
             <div className=' flex flex-row mt-1'>
@@ -214,7 +225,7 @@ function deleteItem(val){
             )
 
             )}
-            <div className='mt-2 p-2 flex justify-end flex-1' > <input type="button" value="Add into Stock" className='bg-blue-800 w-2/12 text-white p-1 rounded-md justify-center items-center hover:cursor-pointer' onClick={()=>saveData()}/> </div>
+            <div className='mt-2 p-2 flex justify-end flex-1' > <input type="button" value="Issued to concerned Branch" className='bg-blue-800 w-4/12 text-white p-1 rounded-md justify-center items-center hover:cursor-pointer' onClick={()=>saveData()}/> </div>
 
         </div>
       </div>
@@ -222,4 +233,4 @@ function deleteItem(val){
   )
 }
 
-export default StockInward
+export default StockOutward
