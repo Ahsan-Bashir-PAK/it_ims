@@ -3,7 +3,7 @@ import Image from 'next/image';
 import {React} from 'react'
 import Link from 'next/link';
 import Logo from '../img/logo.png'
-import LeftSideBar from './leftSideBar'
+
 
 const Dashboard = () => {
   
@@ -17,7 +17,7 @@ const Dashboard = () => {
                      {/* <image src={Logo} height={80} width={100}/> */}
                      <Image src={Logo} className=''/>
                   </div>
-                 <LeftSideBar/>
+                 
                   <div className=' w-full m-auto'>
                       <ul>
                      
