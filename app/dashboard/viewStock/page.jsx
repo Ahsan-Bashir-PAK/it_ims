@@ -7,18 +7,18 @@ import Link from 'next/link';
 
 
 
-const ViewProducts = () => {
+const ViewStock = () => {
 
-  const [products, setProducts] = useState([])
+  const [stock, setStock] = useState([])
 
 
   useEffect(() => {
 
-    axios.get('http://192.168.0.100:8000/api/products/get').then(
+    axios.get('http://192.168.0.100:8000/api/stock/get').then(
       response => {
         // setProducts(response.data)
         console.log(response.data.data)
-        setProducts(response.data.data)
+        setStock(response.data.data)
       }
     )
     // console.log(products)
@@ -33,28 +33,28 @@ const ViewProducts = () => {
     brand: "",
   }
   const [items, setItems] = useState(updatedItems)
-  const updateData = (id) => {
-    // console.log(id, items)
-    axios.patch(`http://192.168.0.100:8000/api/products/update/${id}`, items).then(
+  // const updateData = (id) => {
+  //   // console.log(id, items)
+  //   axios.patch(`http://192.168.0.100:8000/api/products/update/${id}`, items).then(
 
 
-      response => {
+  //     response => {
 
-        if (response) {
+  //       if (response) {
 
-          setItems(updatedItems)
-        }
+  //         setItems(updatedItems)
+  //       }
 
-      }).catch(
-        (reson) => {
-          alert(Object.values(reson.response.data).map((item) => (
+  //     }).catch(
+  //       (reson) => {
+  //         alert(Object.values(reson.response.data).map((item) => (
 
-            item[0]
+  //           item[0]
 
-          )))
-        }
-      )
-  }
+  //         )))
+  //       }
+  //     )
+  // }
 
   // const [data, setData] = useState(defaults)
 
@@ -67,33 +67,47 @@ const ViewProducts = () => {
       <div className=' border w-screen m-auto  justify-center items-center text-center h-screen bg-gradient-to-t from-teal-500   to-blue-200 flex flex-row'>
         {/* Menu Bar */}
 
-        <div className='w-8/12 h-screen p-3  overflow-scroll scroll-smooth'>
+        <div className='w-full h-screen p-3  overflow-scroll scroll-smooth'>
 
           <div className='flex flex-row  text-white bg-blue-500  '>
-            <div className='p-1 w-1/12 '>Sr. #</div>
-            <div className='p-1 ml-2 w-3/12 '>Product Name</div>
-            <div className='p-1 ml-2 w-2/12 '>Category</div>
-            <div className='p-1 ml-2 w-3/12 '>Brand</div>
-            <div className='p-1 ml-2 w-4/12 '>Description</div>
-            <div className='p-1 mr-2 w-1/12  '>Action</div>
+            <div className='p-1 w-1/12 '>Vno.</div>
+            <div className='p-1 ml-2 w-3/12 '>Date</div>
+            <div className='p-1 ml-2 w-2/12 '>Product Name</div>
+            <div className='p-1 ml-2 w-3/12 '>Issued Branch</div>
+            <div className='p-1 ml-2 w-3/12 '>Issued By</div>
+            <div className='p-1 ml-2 w-4/12 '>Received Branch</div>
+            <div className='p-1 ml-2 w-4/12 '>Received By</div>
+            <div className='p-1 ml-2 w-2/12 '>Quantity</div>
+            <div className='p-1 ml-2 w-2/12 '>Available</div>
+            <div className='p-1 ml-2 w-2/12 '>Issued</div>
+            <div className='p-1 ml-2 w-2/12 '>Status</div>
+            <div className='p-1 mr-2 w-1/12  '>Description</div>
           </div>
           {
-            products &&
-            products.map((item, index) => (
+            stock &&
+            stock.map((item, index) => (
               <div className='flex flex-row p-1 bg-slate-50 border border-b border-blue-100'>
 
-                <div className='p-1 w-1/12 ml-2 '>{item.serialno}</div>
-                <div className='p-1 w-3/12 ml-2'>{item.name}</div>
-                <div className='p-1 w-2/12 ml-2'>{item.catagory}</div>
-                <div className='p-1 w-3/12 ml-2'>{item.brand}</div>
+                <div  className='p-1 w-1/12 ml-2 break-words '>{item.vno}</div>
+                <div className='p-1 w-3/12 ml-2'>{item.date}</div>
+                <div className='p-1 w-2/12 ml-2'>{item.product_name}</div>
+                <div className='p-1 w-3/12 ml-2'>{item.issued_branch}</div>
+                <div className='p-1 w-3/12 ml-2'>{item.issued_by}</div>
+                <div className='p-1 w-4/12 ml-2 text-wrap'>{item.received_branch}</div>
+                <div className='p-1 w-4/12 ml-2 text-wrap'>{item.received_by}</div>
+                <div className='p-1 w-2/12 ml-2 text-wrap'>{item.qty}</div>
+                <div className='p-1 w-2/12 ml-2 text-wrap'>{item.stkin}</div>
+                <div className='p-1 w-2/12 ml-2 text-wrap'>{item.stkout}</div>
+                <div className='p-1 w-2/12 ml-2 text-wrap'>{item.product_status}</div>
                 <div className='p-1 w-4/12 ml-2 text-wrap'>{item.description}</div>
-                <div className='p-1 w-1/12 align-middle flex justify-center items-center  hover:cursor-pointer'><span className='hidden'>{item.id}</span> <MdEdit size={20} color={'#123999'} onClick={() => setItems(item)} /></div>
+                
+                {/* <div className='p-1 w-1/12 align-middle flex justify-center items-center  hover:cursor-pointer'><span className='hidden'>{item.id}</span> <MdEdit size={20} color={'#123999'} onClick={() => setItems(item)} /></div> */}
               </div>
             ))}
 
         </div>
 
-        <div className='w-4/12  h-screen bg-gradient-to-b from-blue-500   to-teal-200  '>
+        {/* <div className='w-4/12  h-screen bg-gradient-to-b from-blue-500   to-teal-200  '>
 
           <form action="" method="post">
             <div className=' justify-start border border-blue-300 p-2 w-10/12 rounded-md items-start m-auto mt-10 bg-gradient-to-b from-blue-300   to-slate-100 shadow-md shadow-blue-800 '>
@@ -150,11 +164,11 @@ const ViewProducts = () => {
               </div>
             </div>
           </form>
-        </div>
+        </div> */}
 
       </div>
     </div>
   )
 }
 
-export default ViewProducts
+export default ViewStock

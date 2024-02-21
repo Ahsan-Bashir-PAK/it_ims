@@ -18,21 +18,33 @@ const Dashboard = () => {
                      <Image src={Logo} className=''/>
                   </div>
                  
-                  <div className=' w-full m-auto'>
+                  <div className=' w-full m-auto mt-2'>
+                     <h2 className=' px-4  py-2  text-yellow-400 items-center bg-blue-900 '>
+                     <span className='text-lg'>Store Inventory Managment System</span>
+                     <br/>NHMP Training College, Sheikhupura
+                     </h2>
+                     
                       <ul>
                      
-                            <li className='pl-5 bg-slate-200  mb-1 mt-2 hover:bg-white cursor-pointer  border-indigo-500'>
-                              Add Product
-                            </li>
-                            <li className='pl-5 bg-slate-200  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
-                              <Link href="/dashboard/viewProducts">View Products</Link>
+                           
+                            <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
+                              <Link href="/dashboard/addProducts">Add Product</Link>
                               </li>
-                              <li className='pl-5 bg-slate-200  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
-                              <Link href="/dashboard/stockInward">Stock Inward</Link>
+                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
+                              <Link href="/dashboard/viewProducts">View Product</Link>
                               </li>
-                              <li className='pl-5 bg-slate-200  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
+                            <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
+                              <Link href="/dashboard/stockInward">Stock Inward </Link>
+                              </li>
+                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
                               <Link href="/dashboard/stockOutward">Stock Outward</Link>
+                             
                               </li>
+                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
+                              <Link href="/dashboard/viewProducts">View Stock</Link>
+                             
+                              </li>
+                            
                             
                       </ul>
                   </div>
@@ -88,13 +100,13 @@ const Dashboard = () => {
                         <div className='bg-blue-400 w-3/12 h-3/6 flex flex-row border-black m-1 '>
                           <div className=' w-full bg-slate-200'>
                              <h6 className='bg-black p-1 text-white text-center'>Recruite Course</h6>
-                             {/* <ul>
+                             <ul>
                                 <li className='pl-1 border-slate-100 border-b-2 mb-1 hover:font-bold hover:bg-slate-200  hover:rounded-md cursor-pointer'>Total Nominatation: 30</li>
                                 <li className='pl-1 border-slate-100 border-b-2 mb-1 hover:font-bold hover:bg-slate-200  hover:rounded-md cursor-pointer'>Total Arrival: 27</li>
                                 <li className='pl-1 border-slate-100 border-b-2 mb-1 hover:font-bold hover:bg-slate-200  hover:rounded-md cursor-pointer'>Not Reported: 03</li>
                                 <li className='pl-1 border-slate-100 border-b-2 mb-1 hover:font-bold hover:bg-slate-200  hover:rounded-md cursor-pointer'>Repatriated: 02</li>
                                 <li className='pl-1 border-slate-100 border-b-2 mb-1 hover:font-bold hover:bg-slate-200  hover:rounded-md cursor-pointer'>Present: 25</li>
-                             </ul> */}
+                             </ul>
                              
                             </div>
                         </div>
