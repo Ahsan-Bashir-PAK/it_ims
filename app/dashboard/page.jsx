@@ -21,7 +21,7 @@ const Dashboard = () => {
                      <Image src={Logo} className=''/>
                   </div>
                  
-                  <div className=' w-full m-auto mt-2'>
+                  <div className=' w-full m-auto mt-2 p-2 rounded-md'>
                      <h2 className=' px-4  py-2  text-yellow-400 items-center bg-blue-900 '>
                      <span className='text-lg'>Store Inventory Managment System</span>
                      <br/>NHMP Training College, Sheikhupura
@@ -30,19 +30,19 @@ const Dashboard = () => {
                       <ul>
                      
                            
-                            <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
+                            <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <IoMdAddCircleOutline color={'#00112e'} size={20}/>
                               <Link href="/dashboard/addProducts">Add Product</Link>
                               </li>
                               <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <CiViewList color={'#00112e'} size={20}/>
-                              <Link href="/dashboard/viewProduct">View Product</Link>
+                              <Link href="/dashboard/viewProducts">View Product</Link>
                               </li>
                               <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <MdOutlineInventory2 color={'#00112e'} size={20}/>
                               <Link href="/dashboard/stockInward">Stock Inward </Link>
                               </li>
-                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
+                              <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <MdOutlineProductionQuantityLimits color={'#00112e'} size={20}/>
                               <Link href="/dashboard/stockOutward">Stock Outward</Link>
                              
