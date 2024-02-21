@@ -3,8 +3,11 @@ import Image from 'next/image';
 import {React} from 'react'
 import Link from 'next/link';
 import Logo from '../img/logo.png'
-
-
+import { MdAddCircle } from "react-icons/md";
+import { IoMdAddCircleOutline } from "react-icons/io";
+import { CiViewList } from "react-icons/ci";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import { MdOutlineInventory2 } from "react-icons/md";
 const Dashboard = () => {
   
 
@@ -27,21 +30,26 @@ const Dashboard = () => {
                       <ul>
                      
                            
-                            <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
+                            <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
+                              <IoMdAddCircleOutline color={'#00112e'} size={20}/>
                               <Link href="/dashboard/addProducts">Add Product</Link>
                               </li>
-                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
-                              <Link href="/dashboard/viewProducts">View Product</Link>
+                              <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
+                              <CiViewList color={'#00112e'} size={20}/>
+                              <Link href="/dashboard/viewProduct">View Product</Link>
                               </li>
-                            <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
+                              <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
+                              <MdOutlineInventory2 color={'#00112e'} size={20}/>
                               <Link href="/dashboard/stockInward">Stock Inward </Link>
                               </li>
-                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
+                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
+                              <MdOutlineProductionQuantityLimits color={'#00112e'} size={20}/>
                               <Link href="/dashboard/stockOutward">Stock Outward</Link>
                              
                               </li>
-                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500'>
-                              <Link href="/dashboard/viewProducts">View Stock</Link>
+                              <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
+                              <CiViewList color={'#00112e'} size={20}/>
+                              <Link href="/dashboard/viewStock">View Stock</Link>
                              
                               </li>
                             

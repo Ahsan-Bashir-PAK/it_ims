@@ -70,7 +70,7 @@ const ViewStock = () => {
         <div className='w-full h-screen p-3  overflow-scroll scroll-smooth'>
 
           <div className='flex flex-row  text-white bg-blue-500  '>
-            <div className='p-1 w-1/12 '>Vno.</div>
+            <div className='p-1 w-2/12 '>Vno.</div>
             <div className='p-1 ml-2 w-3/12 '>Date</div>
             <div className='p-1 ml-2 w-2/12 '>Product Name</div>
             <div className='p-1 ml-2 w-3/12 '>Issued Branch</div>
@@ -88,7 +88,10 @@ const ViewStock = () => {
             stock.map((item, index) => (
               <div className='flex flex-row p-1 bg-slate-50 border border-b border-blue-100'>
 
-                <div  className='p-1 w-1/12 ml-2 break-words '>{item.vno}</div>
+                <div  className='p-1 w-2/12 ml-2 break-words inline-flex flex-wrap text-wrap '>
+                  
+                  <span className='text-wrap flex flex-wrap'>{item.vno}</span>
+                  </div>
                 <div className='p-1 w-3/12 ml-2'>{item.date}</div>
                 <div className='p-1 w-2/12 ml-2'>{item.product_name}</div>
                 <div className='p-1 w-3/12 ml-2'>{item.issued_branch}</div>
