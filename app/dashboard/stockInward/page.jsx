@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import axios from 'axios';
 import Link from 'next/link';
@@ -21,6 +21,10 @@ const StockInward = () => {
     description: "",
   }
 
+  useEffect(()=>{
+     
+
+  },[])
 
   const [data, setData] = useState(defaults)
  
@@ -33,13 +37,17 @@ const StockInward = () => {
 
 
 //  Delete an item from Array
-function deleteItem(val){
-  // alert(val)
-  
-   const index = ReceivedItemArray.indexOf(val);
-
-    const x = ReceivedItemArray.splice(index, 1);
-
+function deleteItem(vals){
+const resp=  confirm("Do you want to delete?")
+if(resp) {
+const index =  ReceivedItemArray.filter((item)=> item.vno !== vals)
+// console.log(index + vals)
+setRecievedItemArray(index)
+//     const index = ReceivedItemArray.indexOf(vals);
+//     const x = ReceivedItemArray.splice(index, 1)
+//     setRecievedItemArray(ReceivedItemArray)
+}     
+    
  
 }
 
@@ -207,7 +215,7 @@ function deleteItem(val){
                 <div className='p-1 w-4/12 ml-2 text-wrap'>{item.description}</div>
                 <div className='p-1 w-1/12 align-middle flex justify-center items-center  gap-1'>
                   <span className='hover:cursor-pointer' onClick={()=>deleteItem(item.vno)}><MdDelete size={20} color={'#d40404'} /></span>
-                  <span className='hover:cursor-pointer'><MdEdit size={20} color={'#123999'} /></span>
+                  {/* <span className='hover:cursor-pointer'><MdEdit size={20} color={'#123999'} /></span> */}
                 </div>
 
               </div>

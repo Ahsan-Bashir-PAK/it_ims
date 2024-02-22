@@ -22,8 +22,8 @@ const Dashboard = () => {
                   </div>
                  
                   <div className=' w-full m-auto mt-2 p-2 rounded-md'>
-                     <h2 className=' px-4  py-2  text-yellow-400 items-center bg-blue-900 '>
-                     <span className='text-lg'>Store Inventory Managment System</span>
+                     <h2 className=' px-2  py-2  text-yellow-400 items-center bg-blue-900 '>
+                     <span className=' text-sm'>Store Inventory Managment System</span>
                      <br/>NHMP Training College, Sheikhupura
                      </h2>
                      
