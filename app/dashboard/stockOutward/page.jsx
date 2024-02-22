@@ -20,8 +20,22 @@ const StockOutward = () => {
     expiry_date: "",
     description: "",
   }
+const list = {
+  admin : "Admin",
+  dla: "DLA",
+  developement: "Development",
+  security: "Security",
+  osi: "OSI",
+  accounts: "Accounts",
+  MT: "MT",
+  Store: "Store",
+  Training: "Training",
+  Mess: "Mess",
+  Drill: "Drill",
+  
+}
 
-  const Branches = ['Admin', 'DLA', 'Development','Security', 'OSI', 'Accounts', 'MT', 'Store', 'Training', 'Mess', 'Drill'];
+  const  [branches, setBranches] = useState(list);
   const [data, setData] = useState(defaults)
  
   const [ReceivedItemArray, setRecievedItemArray] = useState([]);
@@ -149,11 +163,15 @@ function deleteItem(val){
                 </select>
                 
                 <select name="status" >
-                {
-                  Branches.forEach(function(entry) {
-                    <option value={console.log(entry)}>{console.log(entry)}</option>
+                {/* {
+                  branches &&
+                  branches.map((item, key)=> {
+                    <option value={item.key}>{item.admin}</option>
+                   
+                    
+                    
                   })
-                }
+                } */}
                 </select>
                 
                 
