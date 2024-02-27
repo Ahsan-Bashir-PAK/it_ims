@@ -8,6 +8,8 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import { CiViewList } from "react-icons/ci";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { MdOutlineInventory2 } from "react-icons/md";
+import { HiOutlineHome } from "react-icons/hi2";
+import { FcHome } from "react-icons/fc";
 const Dashboard = () => {
   
 
@@ -31,25 +33,29 @@ const Dashboard = () => {
                      
                            
                             <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
+                              <FcHome color={'#00112e'} size={25}/>
+                              <Link href="/dashboard" className='ml-2'>Home</Link>
+                              </li>
+                              <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <IoMdAddCircleOutline color={'#00112e'} size={20}/>
-                              <Link href="/dashboard/addProducts">Add Product</Link>
+                              <Link href="/dashboard/addProduct" className='ml-2'>Add Product</Link>
                               </li>
                               <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <CiViewList color={'#00112e'} size={20}/>
-                              <Link href="/dashboard/viewProducts">View Product</Link>
+                              <Link href="/dashboard/viewProducts" className='ml-2'>View Product</Link>
                               </li>
                               <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <MdOutlineInventory2 color={'#00112e'} size={20}/>
-                              <Link href="/dashboard/stockInward">Stock Inward </Link>
+                              <Link href="/dashboard/stockInward" className='ml-2'>Stock Inward </Link>
                               </li>
                               <li className='pl-5 bg-slate-300   hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <MdOutlineProductionQuantityLimits color={'#00112e'} size={20}/>
-                              <Link href="/dashboard/stockOutward">Stock Outward</Link>
+                              <Link href="/dashboard/stockOutward" className='ml-2'>Stock Outward</Link>
                              
                               </li>
                               <li className='pl-5 bg-slate-300  mb-1 hover:bg-white cursor-pointer  border-indigo-500 flex flex-row  items-center'>
                               <CiViewList color={'#00112e'} size={20}/>
-                              <Link href="/dashboard/viewStock">View Stock</Link>
+                              <Link href="/dashboard/viewStock" className='ml-2'>View Stock</Link>
                              
                               </li>
                             

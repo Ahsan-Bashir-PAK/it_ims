@@ -110,14 +110,14 @@ setRecievedItemArray(index)
               <div><input type="text" name="" id="category" className='border'
                 value={data.issued_branch}
                 onChange={(e) => setData({ ...data, issued_branch: e.target.value })}
-              /></div>
+                required /></div>
             </div>
             <div className=' flex flex-row mt-1'>
               <div className=' w-4/12'><label htmlFor="category" className=' '>Received Branch</label></div>
               <div><input type="text" name="" id="category" className='border'
                 value={data.received_branch}
                 onChange={(e) => setData({ ...data, received_branch: e.target.value })}
-              /></div>
+              required={true}/></div>
             </div>
             <div className=' flex flex-row mt-1'>
               <div className=' w-4/12'><label htmlFor="brand" className=' '>Issued By</label></div>
@@ -179,7 +179,7 @@ setRecievedItemArray(index)
           </div>
         </form>
         {/* Stock in ward items  */}
-        <div className='bg-blue-100 w-8/12 border-blue-800 rounded-sm p-4  h-4/6 overflow-y-scroll ml-5'>
+        <div className='bg-blue-100 w-8/12 border-blue-800 rounded-sm p-4  h-5/6 overflow-y-scroll ml-5'>
           <h1 className='bg-[#004e98] text-white text-center rounded-tr-md rounded-tl-md '>View Items</h1>
           <div className='flex flex-row  text-white bg-blue-500  '>
             <div className='p-1 w-1/12 '>Vno #</div>
