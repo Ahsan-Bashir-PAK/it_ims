@@ -5,6 +5,8 @@ import { FaLock } from "react-icons/fa";
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import {myfire} from '../firebase'
+import { addDoc, collection } from 'firebase/firestore';
 
 const logins = {
     email : "",
@@ -18,22 +20,24 @@ const Login = () => {
 const router = useRouter()     
 const [data, setData] = useState(logins)
 
+const a = collection(myfire, "login")
+
 function LoginAuth(){
     if (data.email =="") {alert("Please enter email address")}
     else if (data.password =="") {alert("Please enter password")}
     else {
-    axios.post('http://192.168.0.100:8000/api/user/login', data).then(
-        response=>{if(response) {
-            console.log(response.data.token)
-            router.push('/dashboard')
-        }
-    }).catch((err)=> {
-            alert(err)
-    })
+    // axios.post('http://192.168.0.100:8000/api/user/login', data).then(
+    //     response=>{if(response) {
+    //         console.log(response.data.token)
+    //         router.push('/dashboard')
+    //     }
+    // }).catch((err)=> {
+    //         alert(err)
+    // })
 
+   const res = addDoc(a, data)
     
-    
-    
+    console.log(res)
    
        
     }
